@@ -13,3 +13,29 @@ for (item of navBarItems) {
     item.style.fontWeight = "bold";
   }
 }
+
+function swapStylesheet(page) {
+  var styles = document.getElementById("styles");
+
+  if (page == "landing-page") {
+    if (styles.href.includes("index.css")) {
+      styles.href = "./empty.css";
+    } else if (styles.href.includes("empty.css")) {
+      styles.href = "./index.css";
+    }
+  }
+  if (page == "portfolio-page") {
+    if (styles.href.includes("portfolio.css")) {
+      styles.href = "./empty.css";
+    } else if (styles.href.includes("empty.css")) {
+      styles.href = "./index.css";
+    }
+  }
+  if (page == "resume-page") {
+    if (styles.href.includes("resume.css")) {
+      styles.href = "./empty.css";
+    } else if (styles.href.includes("empty.css")) {
+      styles.href = "./index.css";
+    }
+  }
+}

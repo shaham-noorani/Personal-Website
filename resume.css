@@ -30,6 +30,23 @@ a:hover {
   color: #0080a9;
 }
 
+.style-swap-button {
+  margin-left: 100px;
+  font-size: 15px;
+  background-color: #0080a9;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  padding: 10px;
+  padding-left: 13px;
+}
+
+.style-swap-button:hover,
+.style-swap-button:focus {
+  background-color: #16437e;
+}
+
 /* body */
 .pdf {
   float: left;
