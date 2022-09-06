@@ -19,23 +19,23 @@ function swapStylesheet(page) {
 
   if (page == "landing-page") {
     if (styles.href.includes("index.css")) {
-      styles.href = "./empty.css";
-    } else if (styles.href.includes("empty.css")) {
+      styles.href = "./index2.css";
+    } else if (styles.href.includes("index2.css")) {
       styles.href = "./index.css";
     }
   }
   if (page == "portfolio-page") {
     if (styles.href.includes("portfolio.css")) {
-      styles.href = "./empty.css";
-    } else if (styles.href.includes("empty.css")) {
-      styles.href = "./index.css";
+      styles.href = "./portfolio2.css";
+    } else if (styles.href.includes("portfolio2.css")) {
+      styles.href = "./portfolio.css";
     }
   }
   if (page == "resume-page") {
     if (styles.href.includes("resume.css")) {
-      styles.href = "./empty.css";
-    } else if (styles.href.includes("empty.css")) {
-      styles.href = "./index.css";
+      styles.href = "./resume2.css";
+    } else if (styles.href.includes("resume2.css")) {
+      styles.href = "./resume.css";
     }
   }
 }
