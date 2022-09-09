@@ -1,41 +1,65 @@
+// determine current tab
 const tabNameToNavItem = {
+  "": "About Me",
   "index.html": "About Me",
   "portfolio.html": "Portfolio",
   "resume.html": "Resume",
 };
 
 const navBarItems = document.getElementsByClassName("nav-bar-link");
-let tab = this.window.location.pathname.split("/")[3];
-let currentNavItem = tabNameToNavItem[tab];
+let tab = this.window.location.pathname.split("/");
+tab = tab[tab.length - 1];
+tab = tabNameToNavItem[tab];
 
-for (item of navBarItems) {
-  if (item.innerHTML == currentNavItem) {
-    item.style.fontWeight = "bold";
+function highlightTabInNav() {
+  for (item of navBarItems) {
+    if (item.innerHTML == tab) {
+      item.style.fontWeight = "bold";
+      console.log("set", item.innerHTML, "to bold");
+    }
   }
 }
 
-function swapStylesheet(page) {
-  var styles = document.getElementById("styles");
+function setStylesheet() {
+  let styles = document.getElementById("styles");
+  let currentStyle = localStorage.getItem("style");
 
-  if (page == "landing-page") {
-    if (styles.href.includes("index.css")) {
-      styles.href = "./index2.css";
-    } else if (styles.href.includes("index2.css")) {
+  console.log(currentStyle, tab);
+
+  if (tab == "About Me") {
+    if (currentStyle == "V1") {
       styles.href = "./index.css";
+    } else {
+      styles.href = "./index2.css";
     }
   }
-  if (page == "portfolio-page") {
-    if (styles.href.includes("portfolio.css")) {
-      styles.href = "./portfolio2.css";
-    } else if (styles.href.includes("portfolio2.css")) {
-      styles.href = "./portfolio.css";
-    }
-  }
-  if (page == "resume-page") {
-    if (styles.href.includes("resume.css")) {
-      styles.href = "./resume2.css";
-    } else if (styles.href.includes("resume2.css")) {
+  if (tab == "Resume") {
+    if (currentStyle == "V1") {
       styles.href = "./resume.css";
+    } else {
+      styles.href = "./resume2.css";
     }
   }
+  if (tab == "Portfolio") {
+    if (currentStyle == "V1") {
+      styles.href = "./portfolio.css";
+    } else {
+      styles.href = "./portfolio2.css";
+    }
+  }
+}
+
+highlightTabInNav();
+setStylesheet();
+
+function swapStylesheet() {
+  localStorage.setItem(
+    "style",
+    localStorage.getItem("style") == "V1" ||
+      localStorage.getItem("style") == null
+      ? "V2"
+      : "V1"
+  );
+
+  setStylesheet();
 }
