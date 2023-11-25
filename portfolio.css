@@ -63,29 +63,23 @@ a {
 }
 
 .content-wrapper {
-  margin: 5% 8%;
-}
-
-.row {
-  display: flex;
-  align-items: flex-start;
+  margin: 3% 8%;
 }
 
 .left-row-content {
-  width: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3%;
 }
 
 .right-row-content {
-  margin-top: 8%;
-  width: 150%;
-}
-
-.row-title {
-  margin-left: 5%;
+  margin-top: -2%;
 }
 
 .logo {
-  width: 250px;
+  padding-top: 1%;
+  width: 10%;
 }
 
 .divider {

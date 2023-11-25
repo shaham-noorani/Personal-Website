@@ -53,6 +53,7 @@ a:hover {
 }
 
 /* body */
+
 h1 {
   font-size: 40px;
 }
@@ -68,23 +69,29 @@ a {
 }
 
 .content-wrapper {
-  margin: 3% 8%;
+  margin: 5% 8%;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
 }
 
 .left-row-content {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 3%;
+  width: 80%;
 }
 
 .right-row-content {
-  margin-top: -2%;
+  margin-top: 8%;
+  width: 150%;
+}
+
+.row-title {
+  margin-left: 5%;
 }
 
 .logo {
-  padding-top: 1%;
-  width: 10%;
+  width: 250px;
 }
 
 .divider {
